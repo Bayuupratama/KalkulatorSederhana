@@ -1,0 +1,155 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0; /* Warna latar belakang yang lebih terang */
+    margin: 0;
+    padding: 20px;
+}
+
+.flex-container-column {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px; /* Lebar maksimum kalkulator */
+    margin: 0 auto;
+    text-align: right;
+}
+
+.flex-container-row {
+    display: flex;
+}
+
+.button {
+    flex-basis: 25%;
+    font-size: 1.5em;
+    text-align: center;
+    padding: 15px; /* Mengurangi padding untuk tombol */
+    border: none;
+    background-color: #007bff; /* Biru muda */
+    color: white;
+    border-radius: 10px; /* Sudut membulat */
+    transition: background-color 0.3s, transform 0.2s; /* Transisi halus */
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Bayangan halus */
+}
+
+.button:hover {
+    background-color: #0056b3; /* Biru gelap saat hover */
+    transform: scale(1.05);
+}
+
+.double {
+    flex-basis: 50%; /* Lebar tombol ganda */
+}
+
+.display {
+    color: white;
+    width: 100%;
+    padding: 2px 1rem; /* Padding lebih kecil */
+    background-color: #343a40; /* Abu-abu gelap */
+    border-radius: 10px; /* Sudut membulat */
+    font-size: 1.3em; /* Ukuran font lebih kecil */
+    margin-bottom: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* Bayangan lebih halus */
+    height: 80px; /* Atur tinggi untuk lebih sesuai dengan angka */
+    display: flex; /* Gunakan flex untuk memusatkan angka */
+    align-items: center; /* Pusatkan vertikal */
+    justify-content: flex-end; /* Pusatkan horizontal ke kanan */
+}
+
+
+.operator,
+.negative,
+.equals {
+    background-color: #ff5722; /* Warna oranye untuk operator */
+}
+
+.card {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 15px; /* Sudut lebih membulat */
+    padding: 20px;
+    background-color: white;
+}
+
+.history {
+    width: 100%;
+    max-width: 400px; /* Sesuaikan dengan lebar kalkulator */
+    margin: 30px auto 0 auto;
+    overflow: auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th,
+td {
+    text-align: center;
+    padding: 12px;
+}
+
+th {
+    background-color: #ff5722; /* Warna oranye untuk header */
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2; /* Warna baris genap */
+}
+
+tr:hover {
+    background-color: #e0e0e0; /* Warna saat hover */
+}
+
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: white;
+}
+
+body.dark-mode .card {
+    background-color: #2a2a2a;
+    color: white;
+}
+
+body.dark-mode .button {
+    background-color: #007bff;
+}
+
+body.dark-mode .button:hover {
+    background-color: #0056b3;
+}
+
+body.dark-mode .display {
+    background-color: #343a40;
+}
+
+body.dark-mode th {
+    background-color: #ff5722;
+}
+
+body.dark-mode tr:nth-child(even) {
+    background-color: #444;
+}
+
+
+@media screen and (max-width: 500px) {
+    .button {
+        padding: 10px; /* Padding yang lebih kecil di layar kecil */
+        font-size: 1.2em; /* Ukuran font lebih kecil */
+    }
+    
+    .display {
+        font-size: 1.8em; /* Ukuran font lebih kecil pada layar kecil */
+    }
+    
+    .history {
+        width: 100%; /* Riwayat mengisi layar pada perangkat kecil */
+    }
+}
